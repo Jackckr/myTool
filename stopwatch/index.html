@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bootstrap 实例 - 选择框</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+			$(document).ready(function() {
+				var date_str = "";
+				for (var i = 0; i <= 60; i++) {
+					var d_;
+					i < 10 ? d_ = "0" + i : d_ = i;
+					date_str = date_str + "<option>" + d_ + "</option><br/>"
+				}
+				$("#_minute").append(date_str);
+				var time_str = "";
+				for (var i = 0; i <= 59; i++) {
+					var t_;
+					i < 10 ? t_ = "0" + i : t_ = i;
+					time_str = time_str + "<option>" + t_ + "</option><br/>"
+				}
+				$("#_second").append(time_str);
+				
+				var date_str = "";
+				for (var i = 0; i <= 60; i++) {
+					var d_;
+					i < 10 ? d_ = "0" + i : d_ = i;
+					date_str = date_str + "<option>" + d_ + "</option><br/>"
+				}
+				$("#_warning_minute").append(date_str);
+				
+				var time_str = "";
+				for (var i = 0; i <= 59; i++) {
+					var t_;
+					i < 10 ? t_ = "0" + i : t_ = i;
+					time_str = time_str + "<option>" + t_ + "</option><br/>"
+				}
+				$("#_warning_second").append(time_str);
+			});
+			$(document).ready(function() {
+				$("#start_").click(function(){
+					clickStart();
+					hideSelector();	
+				});
+				$("#stop_").click(clickStop);
+				$("#reset_").click(clickReset);
+			});
+		</script>
+</head>
+
+<body>
+	<form role="form">
+		<div class="form-group col-md-offset-3" id="hide">
+			<div style="display: inline-block;margin-top: 50px;">
+				<div style="display: inline-block;">
+					<select class="form-control" id="_minute" style="width:100px">
+				</select>
+				</div>
+				&nbsp;<span style="color:white">分</span>
+				<div style="display: inline-block;">
+					<select class="form-control" id="_second" style="width:100px">
+				</select>
+				</div>
+				&nbsp;<span style="color:white">秒</span> </div>
+			<div style="display: inline-block;">
+				<button class="btn btn-success" type="button" id="start_">Start</button>
+				<button class="btn btn-warning" type="button" id="stop_">Stop</button>
+				<button class="btn btn-danger" type="button" id="reset_">Reset</button>
+			</div>
+			<div style="display: inline-block;margin-left:50px;">
+			<label style="color:#FFFFFF">提醒时间</label>
+			</div>
+			<div style="display: inline-block;">
+				<div style="display: inline-block;">
+					<select class="form-control" id="_warning_minute" style="width:100px">
+				</select>
+				</div>
+				&nbsp;<span style="color:white">分</span>
+				<div style="display: inline-block;">
+					<select class="form-control" id="_warning_second" style="width:100px">
+				</select>
+				</div>
+				&nbsp;<span style="color:white">秒</span> </div>
+			</div>
+		</div>
+		<div class="time">
+			<div class="digit minutes">
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+			</div>
+			<div class="digit minutes">
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+			</div>
+			<div style="width:40px;display:inline-block;">
+			<div class="separator"></div>
+			<div class="separator"></div>
+		    </div>
+			<div class="digit seconds">
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+			</div>
+			<div class="digit seconds">
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+				<div class="segment"></div>
+			</div>
+		</div>
+	</form>
+<script src="js/countdown.js" type="text/javascript"></script>
+<audio id="remind" src="assets/bee.mp3">
+<audio id="end" src="assets/dididi.mp3">
+</body>
+</html>
