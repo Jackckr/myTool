@@ -21,6 +21,7 @@
 				$("#_warning_second1").append(date_str);
 				$("#_warning_minute2").append(date_str);
 				$("#_warning_second2").append(date_str);
+				$('.should_hide').hide();
 				// var time_str = "";
 // 				for (var i = 0; i <= 59; i++) {
 // 					var t_;
@@ -68,11 +69,11 @@
 				</select>
 				</div>
 				&nbsp;<span style="color:white">分</span>
-				<div style="display: inline-block;">
+				<div style="display: inline-block;" class="should_hide">
 					<select class="form-control" id="_second" style="width:100px">
 				</select>
 				</div>
-				&nbsp;<span style="color:white">秒</span> </div>
+				&nbsp;<span style="color:white" class="should_hide">秒</span>
 			</div>
 		</div>
 		<div class="form-group col-md-offset-9" id="warning_selector1">
@@ -86,11 +87,11 @@
 					</select>
 					</div>
 					&nbsp;<span style="color:white">分</span>
-					<div style="display: inline-block;">
+					<div style="display: inline-block;" class="should_hide">
 						<select class="form-control" id="_warning_second1" style="width:100px">
 					</select>
 					</div>
-					&nbsp;<span style="color:white">秒</span> 
+					&nbsp;<span style="color:white" class="should_hide">秒</span>
 				</div>
 			</div>
 		</div>
@@ -106,11 +107,11 @@
 					</select>
 					</div>
 					&nbsp;<span style="color:white">分</span>
-					<div style="display: inline-block;">
-						<select class="form-control" id="_warning_second2" style="width:100px">
+					<div style="display: inline-block;" class="should_hide">
+						<select class="form-control" id="_warning_second2" name="hide_second" style="width:100px">
 					</select>
 					</div>
-					&nbsp;<span style="color:white">秒</span> 
+					&nbsp;<span style="color:white" class="should_hide">秒</span>
 				</div>
 			</div>
 		</div>

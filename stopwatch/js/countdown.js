@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	_stop = true;
 	timer = null;
 	hide = false;
+	hide_second = true;
 	$(document).keydown(function(event){
 		var e = event || window.event;
 		var k = e.keyCode || e.which;
@@ -38,12 +39,25 @@ document.addEventListener('DOMContentLoaded', function() {
 				hideSelector();	
 			}
 			break;
+		case 77:
+			hideOrShowSecond();
 		default:
 			showSelector();
 		}
 	})
 	reset();
 });
+
+var hideOrShowSecond = function() {
+	if (hide_second) {
+		hide_second = false;
+		$('.should_hide').show();	
+	} else {
+		hide_second = true;
+		$('.should_hide').hide();
+	}
+	
+}
 
 var showSelector = function() {
 	hide = false;
