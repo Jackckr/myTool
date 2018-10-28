@@ -10,35 +10,40 @@
 <script>
 			$(document).ready(function() {
 				var date_str = "";
-				for (var i = 0; i <= 60; i++) {
+				for (var i = 0; i <= 59; i++) {
 					var d_;
 					i < 10 ? d_ = "0" + i : d_ = i;
 					date_str = date_str + "<option>" + d_ + "</option><br/>"
 				}
 				$("#_minute").append(date_str);
-				var time_str = "";
-				for (var i = 0; i <= 59; i++) {
-					var t_;
-					i < 10 ? t_ = "0" + i : t_ = i;
-					time_str = time_str + "<option>" + t_ + "</option><br/>"
-				}
-				$("#_second").append(time_str);
-				
-				var date_str = "";
-				for (var i = 0; i <= 60; i++) {
-					var d_;
-					i < 10 ? d_ = "0" + i : d_ = i;
-					date_str = date_str + "<option>" + d_ + "</option><br/>"
-				}
-				$("#_warning_minute").append(date_str);
-				
-				var time_str = "";
-				for (var i = 0; i <= 59; i++) {
-					var t_;
-					i < 10 ? t_ = "0" + i : t_ = i;
-					time_str = time_str + "<option>" + t_ + "</option><br/>"
-				}
-				$("#_warning_second").append(time_str);
+				$("#_second").append(date_str);
+				$("#_warning_minute1").append(date_str);
+				$("#_warning_second1").append(date_str);
+				$("#_warning_minute2").append(date_str);
+				$("#_warning_second2").append(date_str);
+				// var time_str = "";
+// 				for (var i = 0; i <= 59; i++) {
+// 					var t_;
+// 					i < 10 ? t_ = "0" + i : t_ = i;
+// 					time_str = time_str + "<option>" + t_ + "</option><br/>"
+// 				}
+// 				$("#_second").append(time_str);
+//
+// 				var date_str = "";
+// 				for (var i = 0; i <= 60; i++) {
+// 					var d_;
+// 					i < 10 ? d_ = "0" + i : d_ = i;
+// 					date_str = date_str + "<option>" + d_ + "</option><br/>"
+// 				}
+// 				$("#_warning_minute1").append(date_str);
+//
+// 				var time_str = "";
+// 				for (var i = 0; i <= 59; i++) {
+// 					var t_;
+// 					i < 10 ? t_ = "0" + i : t_ = i;
+// 					time_str = time_str + "<option>" + t_ + "</option><br/>"
+// 				}
+// 				$("#_warning_second").append(time_str);
 			});
 			$(document).ready(function() {
 				$("#start_").click(function(){
@@ -53,7 +58,7 @@
 
 <body>
 	<form role="form">
-		<div class="form-group col-md-offset-3" id="hide">
+		<div class="form-group col-md-offset-3" id="time_selector">
 			<div style="display: inline-block;margin-top: 50px;">
 				<div style="display: inline-block;">
 					<select class="form-control" id="_minute" style="width:100px">
@@ -65,25 +70,46 @@
 				</select>
 				</div>
 				&nbsp;<span style="color:white">秒</span> </div>
-			<div style="display: inline-block;">
-				<button class="btn btn-success" type="button" id="start_">Start</button>
-				<button class="btn btn-warning" type="button" id="stop_">Stop</button>
-				<button class="btn btn-danger" type="button" id="reset_">Reset</button>
+				<div style="display: inline-block;">
+					<button class="btn btn-success" type="button" id="start_">Start</button>
+					<button class="btn btn-warning" type="button" id="stop_">Stop</button>
+					<button class="btn btn-danger" type="button" id="reset_">Reset</button>
+				</div>
 			</div>
-			<div style="display: inline-block;margin-left:50px;">
-			<label style="color:#FFFFFF">提醒时间</label>
-			</div>
+		</div>
+		<div class="form-group col-md-offset-3" id="warning_selector">
 			<div style="display: inline-block;">
 				<div style="display: inline-block;">
-					<select class="form-control" id="_warning_minute" style="width:100px">
-				</select>
+				<label style="color:#FFFFFF">提醒时间1</label>
 				</div>
-				&nbsp;<span style="color:white">分</span>
 				<div style="display: inline-block;">
-					<select class="form-control" id="_warning_second" style="width:100px">
-				</select>
+					<div style="display: inline-block;">
+						<select class="form-control" id="_warning_minute1" style="width:100px">
+					</select>
+					</div>
+					&nbsp;<span style="color:white">分</span>
+					<div style="display: inline-block;">
+						<select class="form-control" id="_warning_second1" style="width:100px">
+					</select>
+					</div>
+					&nbsp;<span style="color:white">秒</span> 
 				</div>
-				&nbsp;<span style="color:white">秒</span> </div>
+<!-- -->
+				<div style="display: inline-block;">
+				<label style="color:#FFFFFF">提醒时间2</label>
+				</div>
+				<div style="display: inline-block;">
+					<div style="display: inline-block;">
+						<select class="form-control" id="_warning_minute2" style="width:100px">
+					</select>
+					</div>
+					&nbsp;<span style="color:white">分</span>
+					<div style="display: inline-block;">
+						<select class="form-control" id="_warning_second2" style="width:100px">
+					</select>
+					</div>
+					&nbsp;<span style="color:white">秒</span> 
+				</div>
 			</div>
 		</div>
 		<div class="time">
@@ -130,7 +156,8 @@
 		</div>
 	</form>
 <script src="js/countdown.js" type="text/javascript"></script>
-<audio id="remind" src="assets/bee.mp3">
+<audio id="remind1" src="assets/bee.mp3">
+<audio id="remind2" src="assets/remind.mp3">
 <audio id="end" src="assets/dididi.mp3">
 </body>
 </html>

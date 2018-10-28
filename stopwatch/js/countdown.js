@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			break;
 		case 83:
 			clickStart();
-			hideSelector();
+			if (!_stop) {
+				hideSelector();	
+			}
 			break;
 		default:
 			showSelector();
@@ -45,12 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var showSelector = function() {
 	hide = false;
-	$("#hide").show();
+	$("#time_selector").show();
+	$("#warning_selector").show();
 }
 
 var hideSelector = function() {
 	hide = true;
-	$("#hide").hide();
+	$("#time_selector").hide();
+	$("#warning_selector").hide();
 }
 
 var clickStart = function() {
@@ -59,9 +63,20 @@ var clickStart = function() {
 	var m_ = $("#_minute").val();
 	var s_ = $("#_second").val();
 	seconds_ = m_ * 60 + s_ * 1;
-	var wm_ = $("#_warning_minute").val();
-	var ws_ = $("#_warning_second").val();
-	warning_seconds_ = wm_ * 60 + ws_ * 1;
+	var wm_ = $("#_warning_minute1").val();
+	var ws_ = $("#_warning_second1").val();
+	warning_seconds_1 = wm_ * 60 + ws_ * 1;
+	wm_ = $("#_warning_minute2").val();
+	ws_ = $("#_warning_second2").val();
+	warning_seconds_2 = wm_ * 60 + ws_ * 1;
+	if (warning_seconds_1 == 0) {
+		warning_seconds_1 = warning_seconds_2;
+	}
+	if (warning_seconds_1 < warning_seconds_2) {
+		alert("提醒时间1必须大于提醒时间2");
+		_stop = true;
+		return;
+	}
 	if (timer != null) {
 		clearInterval(timer);
 		timer = null;
@@ -118,14 +133,24 @@ var run = function() {
 			setNumber(_seconds[0], Math.floor(seconds / 10), 1);
 			setNumber(_seconds[1], seconds % 10, 1);
 
-			if (seconds_ <= warning_seconds_ || seconds_ == 0){
-				if (seconds_ == warning_seconds_) {
-				    $("#remind")[0].play();	
+
+			if (seconds_ <= warning_seconds_1 || seconds_ == 0){
+				//先判断warning_seconds_2，这样当1和2时间一样时，就只有2有效
+				if (seconds_ == warning_seconds_2) {
+				    $("#remind2")[0].play();	
+				} else if (seconds_ == warning_seconds_1) {
+			        $("#remind1")[0].play();
 				} else if (seconds_ == 0) {
-			            $("#end")[0].play();
+					$("#end")[0].play();
 				}
-				$(".segment").css("background","red");
-				$(".separator").css("background","red");
+				// 提示1变黄色，2变红色
+				if (seconds_ <= warning_seconds_1 && seconds_ > warning_seconds_2) {
+					$(".segment").css("background","yellow");
+					$(".separator").css("background","yellow");
+				} else {
+					$(".segment").css("background","red");
+					$(".separator").css("background","red");	
+				}
 			}else{
 				$(".segment").css("background","#00FF00");
 				$(".separator").css("background","#00FF00");
