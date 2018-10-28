@@ -48,13 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
 var showSelector = function() {
 	hide = false;
 	$("#time_selector").show();
-	$("#warning_selector").show();
+	$("#warning_selector1").show();
+	$("#warning_selector2").show();
+	$("#boom").show();
 }
 
 var hideSelector = function() {
 	hide = true;
 	$("#time_selector").hide();
-	$("#warning_selector").hide();
+	$("#warning_selector1").hide();
+	$("#warning_selector2").hide();
+	$("#boom").hide();
 }
 
 var clickStart = function() {
@@ -108,6 +112,10 @@ var clickReset = function() {
 	$("#stop_")[0].innerHTML = "stop"
 	$("#_minute").val("00");
 	$("#_second").val("00");
+	$("#_warning_minute1").val("00")
+	$("#_warning_second1").val("00")
+	$("#_warning_minute2").val("00")
+	$("#_warning_second2").val("00")
 	seconds_ = undefined;
 	clearInterval(timer)
 	reset();
