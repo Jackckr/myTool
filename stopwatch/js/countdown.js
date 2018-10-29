@@ -77,7 +77,7 @@ var hideSelector = function() {
 
 var clickStart = function() {
 	_stop = false;
-	$("#stop_")[0].innerHTML = "stop"
+	$("#stop_")[0].innerHTML = "暂停"
 	var m_ = $("#_minute").val();
 	var s_ = $("#_second").val();
 	if (typeof(s_) == "undefined") {
@@ -116,7 +116,7 @@ var clickStop = function() {
 		_stop = true;
 		clearInterval(timer);
 		timer = null;
-		$("#stop_")[0].innerHTML = "continue"
+		$("#stop_")[0].innerHTML = "继续"
 		showSelector();
 	} else {
 		_stop = false;
@@ -125,14 +125,14 @@ var clickStop = function() {
 			timer = null;
 		}
 		timer = setInterval(run, 1000);
-		$("#stop_")[0].innerHTML = "stop"
+		$("#stop_")[0].innerHTML = "暂停"
 		hideSelector();
 	}
 }
 
 var clickReset = function() {
 	_stop = true;
-	$("#stop_")[0].innerHTML = "stop"
+	$("#stop_")[0].innerHTML = "暂停"
 	$("#_minute").val("00");
 	$("#_second").val("00");
 	$("#_warning_minute1").val("00")
