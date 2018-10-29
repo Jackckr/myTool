@@ -80,12 +80,21 @@ var clickStart = function() {
 	$("#stop_")[0].innerHTML = "stop"
 	var m_ = $("#_minute").val();
 	var s_ = $("#_second").val();
+	if (typeof(s_) == "undefined") {
+		s_ = 0;
+	}
 	seconds_ = m_ * 60 + s_ * 1;
 	var wm_ = $("#_warning_minute1").val();
 	var ws_ = $("#_warning_second1").val();
+	if (typeof(ws_) == "undefined") {
+		ws_ = 0;
+	}
 	warning_seconds_1 = wm_ * 60 + ws_ * 1;
 	wm_ = $("#_warning_minute2").val();
 	ws_ = $("#_warning_second2").val();
+	if (typeof(ws_) == "undefined") {
+		ws_ = 0;
+	}
 	warning_seconds_2 = wm_ * 60 + ws_ * 1;
 	if (warning_seconds_1 == 0) {
 		warning_seconds_1 = warning_seconds_2;

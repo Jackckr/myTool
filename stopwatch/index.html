@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Bootstrap 实例 - 选择框</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-			$(document).ready(function() {
-				var date_str = "";
-				for (var i = 0; i <= 59; i++) {
-					var d_;
-					i < 10 ? d_ = "0" + i : d_ = i;
-					date_str = date_str + "<option>" + d_ + "</option><br/>"
-				}
-				$("#_minute").append(date_str);
-				$("#_second").append(date_str);
-				$("#_warning_minute1").append(date_str);
-				$("#_warning_second1").append(date_str);
-				$("#_warning_minute2").append(date_str);
-				$("#_warning_second2").append(date_str);
-				$('.should_hide').hide();
-				// var time_str = "";
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 选择框</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var date_str = "";
+            for (var i = 0; i <= 59; i++) {
+                var d_;
+                i < 10 ? d_ = "0" + i : d_ = i;
+                date_str = date_str + "<option>" + d_ + "</option><br/>"
+            }
+            $("#_minute").append(date_str);
+            $("#_second").append(date_str);
+            $("#_warning_minute1").append(date_str);
+            $("#_warning_second1").append(date_str);
+            $("#_warning_minute2").append(date_str);
+            $("#_warning_second2").append(date_str);
+            $('.should_hide').hide();
+            // var time_str = "";
 // 				for (var i = 0; i <= 59; i++) {
 // 					var t_;
 // 					i < 10 ? t_ = "0" + i : t_ = i;
@@ -45,129 +45,131 @@
 // 					time_str = time_str + "<option>" + t_ + "</option><br/>"
 // 				}
 // 				$("#_warning_second").append(time_str);
-			});
-			$(document).ready(function() {
-				$("#start_").click(function(){
-					clickStart();
-					hideSelector();	
-				});
-				$("#stop_").click(clickStop);
-				$("#reset_").click(clickReset);
-			});
-		</script>
+        });
+        $(document).ready(function() {
+            $("#start_").click(function(){
+                clickStart();
+                hideSelector();
+            });
+            $("#stop_").click(clickStop);
+            $("#reset_").click(clickReset);
+        });
+    </script>
 </head>
 
 <body>
-	<form role="form">
-		<div class="form-group col-md-offset-9" id="time_selector">
-			<div style="display: inline-block;margin-top: 50px;">
-				<div style="display: inline-block;">
-				<label style="color:#FFFFFF">倒&nbsp;&nbsp;&nbsp;计&nbsp;&nbsp;&nbsp;时</label>
-				</div>
-				<div style="display: inline-block;">
-					<select class="form-control" id="_minute" style="width:100px">
-				</select>
-				</div>
-				&nbsp;<span style="color:white">分</span>
-				<div style="display: inline-block;" class="should_hide">
-					<select class="form-control" id="_second" style="width:100px">
-				</select>
-				</div>
-				&nbsp;<span style="color:white" class="should_hide">秒</span>
-			</div>
-		</div>
-		<div class="form-group col-md-offset-9" id="warning_selector1">
-			<div style="display: inline-block;">
-				<div style="display: inline-block;">
-				<label style="color:#FFFFFF">提醒时间1</label>
-				</div>
-				<div style="display: inline-block;">
-					<div style="display: inline-block;">
-						<select class="form-control" id="_warning_minute1" style="width:100px">
-					</select>
-					</div>
-					&nbsp;<span style="color:white">分</span>
-					<div style="display: inline-block;" class="should_hide">
-						<select class="form-control" id="_warning_second1" style="width:100px">
-					</select>
-					</div>
-					&nbsp;<span style="color:white" class="should_hide">秒</span>
-				</div>
-			</div>
-		</div>
-<!-- -->
-		<div class="form-group col-md-offset-9" id="warning_selector2">
-			<div style="display: inline-block;">
-				<div style="display: inline-block;">
-				<label style="color:#FFFFFF">提醒时间2</label>
-				</div>
-				<div style="display: inline-block;">
-					<div style="display: inline-block;">
-						<select class="form-control" id="_warning_minute2" style="width:100px">
-					</select>
-					</div>
-					&nbsp;<span style="color:white">分</span>
-					<div style="display: inline-block;" class="should_hide">
-						<select class="form-control" id="_warning_second2" name="hide_second" style="width:100px">
-					</select>
-					</div>
-					&nbsp;<span style="color:white" class="should_hide">秒</span>
-				</div>
-			</div>
-		</div>
-		<div class="form-group col-md-offset-9" id="boom">
-			<div style="display: inline-block;">
-				<button class="btn btn-success" type="button" id="start_">Start</button>
-				<button class="btn btn-warning" type="button" id="stop_">Stop</button>
-				<button class="btn btn-danger" type="button" id="reset_">Reset</button>
-			</div>
-		</div>
-		<div class="time">
-			<div class="digit minutes">
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-			</div>
-			<div class="digit minutes">
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-			</div>
-			<div style="width:40px;display:inline-block;">
-			<div class="separator"></div>
-			<div class="separator"></div>
-		    </div>
-			<div class="digit seconds">
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-			</div>
-			<div class="digit seconds">
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-				<div class="segment"></div>
-			</div>
-		</div>
-	</form>
+<form role="form">
+    <div class="form-group col-md-offset-9" id="time_selector">
+        <div style="display: inline-block;margin-top: 50px;">
+            <div style="display: inline-block;">
+                <label style="color:#FFFFFF">倒&nbsp;&nbsp;&nbsp;计&nbsp;&nbsp;&nbsp;时</label>
+            </div>
+            <div style="display: inline-block;">
+                <div style="display: inline-block;">
+                    <select class="form-control" id="_minute" style="width:100px">
+                    </select>
+                </div>
+                &nbsp;<span style="color:white">分</span>
+                <div style="display: inline-block;" class="should_hide">
+                    <select class="form-control" id="_second" style="width:100px">
+                    </select>
+                </div>
+                &nbsp;<span style="color:white" class="should_hide">秒</span>
+                <button class="btn btn-success" type="button" id="start_">start</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-offset-9" id="warning_selector1">
+        <div style="display: inline-block;">
+            <div style="display: inline-block;">
+                <label style="color:#FFFFFF">提醒时间1</label>
+            </div>
+            <div style="display: inline-block;">
+                <div style="display: inline-block;">
+                    <select class="form-control" id="_warning_minute1" style="width:100px">
+                    </select>
+                </div>
+                &nbsp;<span style="color:white">分</span>
+                <div style="display: inline-block;" class="should_hide">
+                    <select class="form-control" id="_warning_second1" style="width:100px">
+                    </select>
+                </div>
+                &nbsp;<span style="color:white" class="should_hide">秒</span>
+                <button class="btn btn-warning" type="button" id="stop_">stop</button>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+    <div class="form-group col-md-offset-9" id="warning_selector2">
+        <div style="display: inline-block;">
+            <div style="display: inline-block;">
+                <label style="color:#FFFFFF">提醒时间2</label>
+            </div>
+            <div style="display: inline-block;">
+                <div style="display: inline-block;">
+                    <select class="form-control" id="_warning_minute2" style="width:100px">
+                    </select>
+                </div>
+                &nbsp;<span style="color:white">分</span>
+                <div style="display: inline-block;" class="should_hide">
+                    <select class="form-control" id="_warning_second2" style="width:100px">
+                    </select>
+                </div>
+                &nbsp;<span style="color:white" class="should_hide">秒</span>
+                <button class="btn btn-danger" type="button" id="reset_">reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-offset-9" id="boom">
+        <div style="display: inline-block;">
+        </div>
+    </div>
+    <div class="time">
+        <div class="digit minutes">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+        <div class="digit minutes">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+        <div style="width:40px;display:inline-block;">
+            <div class="separator"></div>
+            <div class="separator"></div>
+        </div>
+        <div class="digit seconds">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+        <div class="digit seconds">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+    </div>
+</form>
 <script src="js/countdown.js" type="text/javascript"></script>
-<audio id="remind1" src="assets/bee.mp3">
-<audio id="remind2" src="assets/remind.mp3">
-<audio id="end" src="assets/dididi.mp3">
+<audio id="remind1" src="assets/bee.mp3"></audio>
+<audio id="remind2" src="assets/remind.mp3"></audio>
+<audio id="end" src="assets/dididi.mp3"></audio>
 </body>
 </html>
