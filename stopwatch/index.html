@@ -58,7 +58,54 @@
 </head>
 
 <body>
+<div>
 <form role="form">
+    <div class="time">
+        <div class="digit minutes">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+        <div class="digit minutes">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+        <div style="width:40px;display:inline-block;height:0px;">
+            <div class="separator"></div>
+            <div class="separator"></div>
+        </div>
+        <div class="digit seconds">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+        <div class="digit seconds">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+    </div>
+</form>
+</div>
+<div>
+<form style="margin-top:calc(var(--height) + 50px)"> 
     <div class="form-group col-md-offset-9" id="time_selector">
         <div style="display: inline-block;margin-top: 50px;">
             <div style="display: inline-block;">
@@ -124,49 +171,8 @@
         <div style="display: inline-block;">
         </div>
     </div>
-    <div class="time">
-        <div class="digit minutes">
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-        </div>
-        <div class="digit minutes">
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-        </div>
-        <div style="width:40px;display:inline-block;">
-            <div class="separator"></div>
-            <div class="separator"></div>
-        </div>
-        <div class="digit seconds">
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-        </div>
-        <div class="digit seconds">
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-            <div class="segment"></div>
-        </div>
-    </div>
 </form>
+</div>
 <script src="js/countdown.js" type="text/javascript"></script>
 <audio id="remind1" src="assets/bee.mp3"></audio>
 <audio id="remind2" src="assets/remind.mp3"></audio>

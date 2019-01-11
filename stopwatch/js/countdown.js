@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		var e = event || window.event;
 		var k = e.keyCode || e.which;
 		switch(k) {
+		//空格
 		case 32:
 			clickStop();
 			break;
+		// H
 		case 72:
 			if (hide) {
 				showSelector();
@@ -33,12 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
 				hideSelector();
 			}
 			break;
+		// S
 		case 83:
 			clickStart();
 			if (!_stop) {
 				hideSelector();	
 			}
 			break;
+		// M
 		case 77:
 			hideOrShowSecond();
 		default:

@@ -1,3 +1,13 @@
+:root {
+	 // 修改下面的数字，调整计时数字的高度
+	 --height:500px;
+	 // 修改下面的数字，调整计时数字的粗细
+	 --weight:20px;
+     /* (height - 50) / 4 + 10 + 10 - height + 50 */
+	 --digit_1:calc((var(--height) - 50px) / 4 + 70px - var(--height));
+	 /* 0 - (height - 50) / 4 - 10 - weight */
+	 --digit_2:calc(-20px - (var(--height) - 50px) / 4);
+ }
 html, body {
   margin:0;
   padding:0;
@@ -9,18 +19,18 @@ html, body {
 }
 
 .time {
-  height:200px;
+  height:var(--height);
   position:absolute;
-  top:40%;
-  left:50%;
-  width:900px;
-  margin-left:-450px;
+  top:20%;
+  left:5%;
+  width:90%;
+  margin-left:0px;
   margin-top:-100px;
   text-align:center;
 }
 .time .digit {
-  width:120px;
-  height:200px;
+  width:20%;
+  height:var(--height);
   margin:0 5px;
   position:relative;
   display:inline-block;
@@ -56,7 +66,7 @@ html, body {
   border-radius:50%;
   display:inline-block;
   position:relative;
-  top:-110px;
+  top:var(--digit_1);
 }
 
 .time .separator:nth-child(2) {
@@ -66,7 +76,7 @@ html, body {
   border-radius:50%;
   display:inline-block;
   position:relative;
-  top:-50px;
+  top: var(--digit_2);
 }
 
 
@@ -74,13 +84,13 @@ html, body {
   top:10px;
   left:20px;
   right:20px;
-  height:10px;
+  height:var(--weight);
 }
 
 .digit .segment:nth-child(2) {
   top:20px;
   right:10px;
-  width:10px;
+  width:var(--weight);
   height:75px;
   height:calc(50% - 25px);
 }
@@ -88,7 +98,7 @@ html, body {
 .digit .segment:nth-child(3) {
   bottom:20px;
   right:10px;
-  width:10px;
+  width:var(--weight);
   height:75px;
   height:calc(50% - 25px);
 }
@@ -96,14 +106,14 @@ html, body {
 .digit .segment:nth-child(4) {
   bottom:10px;
   right:20px;
-  height:10px;
+  height:var(--weight);
   left:20px;
 }
 
 .digit .segment:nth-child(5) {
   bottom:20px;
   left:10px;
-  width:10px;
+  width:var(--weight);
   height:75px;
   height:calc(50% - 25px);
 }
@@ -111,7 +121,7 @@ html, body {
 .digit .segment:nth-child(6) {
   top:20px;
   left:10px;
-  width:10px;
+  width:var(--weight);
   height:75px;
   height:calc(50% - 25px);
 }
@@ -121,5 +131,5 @@ html, body {
   bottom:calc(50% - 5px);
   right:20px;
   left:20px;
-  height:10px;
+  height:var(--weight);
 }
